@@ -20,6 +20,18 @@ pipeline {
           }
         }
 
+    stage('Check PIT Classes') {
+    steps {
+        sh '''
+            echo "=== Compiled classes ==="
+            find target/classes -type f -name "*.class"
+
+            echo "=== Test classes ==="
+            find target/test-classes -type f -name "*.class"
+        '''
+    }
+}
+
     stage('PIT Mutation Testing') {
             steps {
                 sh 'mvn org.pitest:pitest-maven:mutationCoverage'
