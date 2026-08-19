@@ -34,6 +34,11 @@ pipeline {
 
     stage('PIT Mutation Testing') {
             steps {
+                export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+                export PATH=$JAVA_HOME/bin:$PATH
+    
+                java -version
+                mvn -version
                 sh 'mvn org.pitest:pitest-maven:mutationCoverage'
             }
         }
