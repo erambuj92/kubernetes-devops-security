@@ -19,6 +19,13 @@ pipeline {
             }
           }
         }
+
+    stage('PIT Mutation Testing') {
+            steps {
+                sh 'mvn org.pitest:pitest-maven:mutationCoverage'
+            }
+        }
+    
     stage('Docker Build and push') {
             steps {
               withDockerRegistry([credentialsId:"docker-hub",url: ""]) {
@@ -38,24 +45,20 @@ pipeline {
           }
       }
 
-    stage('PIT Mutation Testing') {
-            steps {
-                sh 'mvn org.pitest:pitest-maven:mutationCoverage'
-            }
-        }
-
-        stage('Publish PIT Report') {
-            steps {
-                publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'target/pit-reports',
-                    reportFiles: 'index.html',
-                    reportName: 'PIT Mutation Testing Report'
-                ])
-            }
-        }
+    
+    
+        // stage('Publish PIT Report') {
+        //     steps {
+        //         publishHTML([
+        //             allowMissing: false,
+        //             alwaysLinkToLastBuild: true,
+        //             keepAll: true,
+        //             reportDir: 'target/pit-reports',
+        //             reportFiles: 'index.html',
+        //             reportName: 'PIT Mutation Testing Report'
+        //         ])
+        //     }
+        // }
 
     
     }
