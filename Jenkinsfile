@@ -38,6 +38,25 @@ pipeline {
           }
       }
 
+    stage('PIT Mutation Testing') {
+            steps {
+                sh 'mvn org.pitest:pitest-maven:mutationCoverage'
+            }
+        }
+
+        stage('Publish PIT Report') {
+            steps {
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'target/pit-reports',
+                    reportFiles: 'index.html',
+                    reportName: 'PIT Mutation Testing Report'
+                ])
+            }
+        }
+
     
     }
 }
