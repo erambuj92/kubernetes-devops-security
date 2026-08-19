@@ -38,8 +38,7 @@ pipeline {
                   mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                   -Dsonar.projectKey=numeric-application \
                   -Dsonar.projectName='numeric-application' \
-                  -Dsonar.host.url=http://devsecops.eastus.cloudapp.azure.com:9000 \
-                  -Dsonar.token=sqp_500ee41a7486b5e8c2ce736ccb369f4da7c8acc2
+                  -Dsonar.host.url=http://devsecops.eastus.cloudapp.azure.com:9000
                   '''
               }
               timeout(time: 2, unit: 'MINUTES') {
