@@ -65,6 +65,28 @@
 			        </execution>
 			    </executions>
 			</plugin>
+			<plugin>
+    <groupId>org.pitest</groupId>
+    <artifactId>pitest-maven</artifactId>
+    <version>1.17.4</version>
+
+    <configuration>
+        <targetClasses>
+            <param>com.example.*</param>
+        </targetClasses>
+        <targetTests>
+            <param>com.example.*</param>
+        </targetTests>
+    </configuration>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+    </dependencies>
+</plugin>
 		</plugins>
 	</build>
 
