@@ -65,17 +65,19 @@
 			        </execution>
 			    </executions>
 			</plugin>
-			<plugin>
+
+         <plugin>
     <groupId>org.pitest</groupId>
     <artifactId>pitest-maven</artifactId>
     <version>1.17.4</version>
 
     <configuration>
         <targetClasses>
-            <param>com.example.*</param>
+            <param>com.devsecops.numeric.*</param>
         </targetClasses>
+
         <targetTests>
-            <param>com.example.*</param>
+            <param>com.devsecops.numeric.*</param>
         </targetTests>
     </configuration>
 
@@ -87,6 +89,7 @@
         </dependency>
     </dependencies>
 </plugin>
+			
 		</plugins>
 	</build>
 
