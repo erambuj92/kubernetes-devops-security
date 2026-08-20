@@ -68,7 +68,14 @@ pipeline {
             always {
               junit 'target/surefire-reports/*.xml'
               jacoco execPattern: 'target/jacoco.exec'
-              pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
+              script {
+                  if (fileExists('target/pit-reports')) {
+                      pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
+                  } else {
+                      echo 'PIT report directory not found. Skipping PIT publisher.'
+                  }
+              }
+              // pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
               dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
             }
     }
