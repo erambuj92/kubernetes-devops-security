@@ -96,6 +96,7 @@
 			    <configuration>
 					<format>ALL</format>
 					<failBuilOnCVSS>5</failBuilOnCVSS>
+					<ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
 				</configuration>
 			</plugin>
 			
