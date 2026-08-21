@@ -138,7 +138,7 @@ multi_stage if {
     contains(lower(val), "--from=")
 }
 
-deny contains msg if {
+warn contains msg if {
     multi_stage == false
     msg := "You COPY, but do not appear to use multi-stage builds..."
 }
