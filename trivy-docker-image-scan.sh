@@ -14,3 +14,4 @@ if[[ "${exit_code}" == 1 ]]; then
   exit 0
 else
   echo "Image scanning passed.. No vulnerability found"
+fi;
