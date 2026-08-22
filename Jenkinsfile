@@ -88,7 +88,7 @@ pipeline {
                     sh 'printenv'
 
                     sh '''
-                        docker build -t erambuj92/numeric-app:${GIT_COMMIT} .
+                        sudo docker build -t erambuj92/numeric-app:${GIT_COMMIT} .
                     '''
 
                     sh '''
