@@ -5,7 +5,6 @@ metadata:
     app: devsecops
   name: devsecops
 spec:
-  serviceAccountName: default
   replicas: 2
   selector:
     matchLabels:
