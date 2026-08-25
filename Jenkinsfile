@@ -152,6 +152,15 @@ pipeline {
         }
       }
     }
+
+    stage('OWASP ZAP') {
+      steps {
+            withKubeConfig([credentialsId: 'kubeconfig']) {
+              sh "bash zap.sh"
+            }
+      }
+    }
+        
     }
 
     post {
