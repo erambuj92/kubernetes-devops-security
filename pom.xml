@@ -40,8 +40,8 @@
 
 		<dependency>
 	      <groupId>org.springdoc</groupId>
-	      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-	      <version>3.1.0</version>
+	      <artifactId>springdoc-openapi-ui</artifactId>
+	      <version>1.2.30</version>
 	    </dependency>
 
 	</dependencies>
