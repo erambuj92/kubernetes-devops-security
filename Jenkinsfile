@@ -166,7 +166,7 @@ pipeline {
     stage('Slack Test') {
       steps {
             // withKubeConfig([credentialsId: 'kubeconfig']) {
-              sh "exit 0"
+              sh "exit 1"
             // }
       }
     }
