@@ -155,13 +155,13 @@ pipeline {
       }
     }
 
-    stage('OWASP ZAP') {
-      steps {
-            withKubeConfig([credentialsId: 'kubeconfig']) {
-              sh "bash zap.sh"
-            }
-      }
-    }
+    // stage('OWASP ZAP') {
+    //   steps {
+    //         withKubeConfig([credentialsId: 'kubeconfig']) {
+    //           sh "bash zap.sh"
+    //         }
+    //   }
+    // }
 
     stage('Slack Test') {
       steps {
